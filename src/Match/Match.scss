@@ -1,0 +1,14 @@
+.Match {
+  padding: 12px;
+  width: max-content;
+  &__team {
+    padding-top: 12px;
+    border-bottom: thick solid blue;
+    width: 20vw;
+    min-width: max-content;
+    &.b {
+      border-right: thick solid blue;
+      width: calc(20vw - 5px);
+    }
+  }
+}

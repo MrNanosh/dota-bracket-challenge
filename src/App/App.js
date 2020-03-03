@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import config from '../config';
 import apiService from '../api-service';
+import Bracket from '../Bracket/Bracket';
 
 class App extends React.Component {
   state = {
@@ -23,20 +24,20 @@ class App extends React.Component {
           0,
           16
         );
+        console.log(teams);
 
-        teams = await teams.map(
-          team => {
-            // get players
-            const players = apiService.getPlayers(
-              team.team_id
-            );
-            return { ...team, players };
-          }
-        );
-        this.setState({
+        teams = teams.map(team => {
+          // get players
+          const players = apiService.getPlayers(
+            team.team_id
+          );
+          console.log(team);
+          return { ...team, players };
+        });
+        console.log(teams);
+        return this.setState({
           teams
         });
-        console.log(this.state);
       } else {
         throw new Error(
           'could not get teams'
@@ -46,23 +47,15 @@ class App extends React.Component {
   }
 
   render() {
+    let { teams } = this.state;
     return (
       <div className="App">
         <header className="App-header"></header>
         <main>
-          {this.state.teams.map(
-            team => (
-              <ul key={team.team_id}>
-                <li>
-                  team:{''}
-                  {team.name}
-                </li>
-                <li>
-                  rating:{''}
-                  {team.rating}
-                </li>
-              </ul>
-            )
+          {teams.length > 0 && (
+            <Bracket
+              teams={teams}
+            ></Bracket>
           )}
         </main>
       </div>
