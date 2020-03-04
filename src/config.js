@@ -9,5 +9,6 @@ export default {
   },
   getTeamHeroes: team_id => {
     return `https://api.opendota.com/api/teams/${team_id}/heroes`;
-  }
+  },
+  TOURNAMENT_START_TIME: 1581439134
 };

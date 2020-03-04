@@ -1,0 +1,56 @@
+.Bracket {
+  display: flex;
+}
+.Stage {
+  &_2 {
+    & .Match {
+      padding-left: 0;
+      padding-top: 20px;
+      &__team {
+        padding-top: 24px;
+        &.b {
+          padding-top: 80px;
+        }
+      }
+    }
+    & > .Stage__division {
+      &.B {
+        padding-top: 10px;
+      }
+    }
+  }
+  &_3 {
+    & .Match {
+      padding-left: 0;
+      padding-top: 40px;
+      &__team {
+        padding-top: 44px;
+        &.b {
+          padding-top: 160px;
+        }
+      }
+    }
+    & > .Stage__division {
+      &.B {
+        padding-top: 80px;
+      }
+    }
+  }
+  &_4 {
+    & .Match {
+      padding-left: 0;
+      padding-top: 20px;
+      &__team {
+        padding-top: 78px;
+        &.b {
+          padding-top: 360px;
+        }
+      }
+    }
+    & > .Stage__division {
+      &.B {
+        padding-top: 80px;
+      }
+    }
+  }
+}

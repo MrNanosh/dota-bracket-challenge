@@ -24,20 +24,10 @@ class App extends React.Component {
           0,
           16
         );
-        console.log(teams);
-
-        teams = teams.map(team => {
-          // get players
-          const players = apiService.getPlayers(
-            team.team_id
-          );
-          console.log(team);
-          return { ...team, players };
-        });
-        console.log(teams);
-        return this.setState({
+        this.setState({
           teams
         });
+        return;
       } else {
         throw new Error(
           'could not get teams'
@@ -50,7 +40,11 @@ class App extends React.Component {
     let { teams } = this.state;
     return (
       <div className="App">
-        <header className="App-header"></header>
+        <header className="App-header">
+          <h1>
+            Dota 2 Bracket Challenge!!!
+          </h1>
+        </header>
         <main>
           {teams.length > 0 && (
             <Bracket

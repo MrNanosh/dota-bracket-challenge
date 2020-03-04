@@ -1,6 +1,38 @@
 .Match {
   padding: 12px;
+  padding-right: 0;
   width: max-content;
+  &__info {
+    position: relative;
+    right: -20vw;
+    height: 0;
+    width: 0;
+    bottom: 100px;
+    margin-top: 0;
+    & .innerBox {
+      position: relative;
+      background-color: gray;
+      width: max-content;
+      & h3 {
+        margin-top: 0;
+      }
+      // width: max-content;
+    }
+    & ul {
+      margin: 0;
+      list-style-type: none;
+      display: flex;
+      width: 800px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      // height: 100px;
+      & li {
+        text-align: left;
+        padding: 4px;
+        padding-right: 6px;
+      }
+    }
+  }
   &__team {
     padding-top: 12px;
     border-bottom: thick solid blue;
@@ -8,7 +40,7 @@
     min-width: max-content;
     &.b {
       border-right: thick solid blue;
-      width: calc(20vw - 5px);
+      width: calc(20vw - 4px);
     }
   }
 }

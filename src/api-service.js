@@ -30,7 +30,6 @@ const apiService = {
       config.getTeamMatches(team_id)
     );
     let json = await response.json();
-
     if (response.ok) {
       return json;
     } else {
